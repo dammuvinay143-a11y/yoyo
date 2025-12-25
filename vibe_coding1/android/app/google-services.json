@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654462674766",
+    "project_id": "college-social-app-c8f53",
+    "storage_bucket": "college-social-app-c8f53.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654462674766:android:09ddf38d09cdc0a3f8a01f",
+        "android_client_info": {
+          "package_name": "com.example.vibe_coding1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPf3g_hdss_1XC81I077GATuv01aOZF3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
