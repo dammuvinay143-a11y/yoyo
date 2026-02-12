@@ -3,119 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Nandhini!</title>
+    <title>Happy Birthday!</title>
     <style>
         body {
-            margin: 0;
-            background-color: #f6f6f6;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-color: #121212; /* Dark Theme */
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
         h1 {
-            color: #ff4081;
-            font-size: 4em;
             text-align: center;
-            animation: glow 1s infinite alternate;
+            animation: flash 1s infinite;
         }
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081; }
-            100% { text-shadow: 0 0 20px #00e676, 0 0 30px #00e676, 0 0 40px #00e676; }
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
-        .balloon {
-            position: absolute;
-            bottom: -100px;
-            background-color: #ffcc00;
-            border-radius: 50%;
-            width: 30px;
-            height: 40px;
-            animation: rise 5s linear infinite;
-        }
-        @keyframes rise {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-800px); }
-        }
-        .emoji-rain {
-            position: absolute;
-            top: -50px;
-            font-size: 30px;
-            animation: rain 10s linear infinite;
-        }
-        @keyframes rain {
-            0% { top: -50px; opacity: 1; }
-            100% { top: 100vh; opacity: 0; }
-        }
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            width: 300px;
-            margin: 20px;
-        }
-        .carousel img {
-            width: 100%;
-            border-radius: 15px;
-            transition: transform 0.5s ease;
-        }
+        .lightning { position: fixed; top: 0; width: 100%; height: 100%; pointer-events: none; }
+        .emoji-rain { position: absolute; top: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+        /* Fireworks and carousel styles would go here */
     </style>
 </head>
 <body>
-    <h1>Happy Birthday Nandhini!</h1>
-    <div class="carousel">
-        <img src="url_to_image_1.jpg" alt="Birthday Image 1">
-        <img src="url_to_image_2.jpg" alt="Birthday Image 2">
-        <img src="url_to_image_3.jpg" alt="Birthday Image 3">
-    </div>
+    <h1>Happy Birthday!</h1>
+    <div class="lightning"></div>
     <div class="emoji-rain"></div>
+    <div class="carousel">
+        <img src="image1.jpg" alt="Celebration 1">
+        <img src="image2.jpg" alt="Celebration 2">
+        <img src="image3.jpg" alt="Celebration 3">
+    </div>
     <script>
-        // Fireworks effect (simple)
-        function fireworks() {
-            const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF'];
-            for (let i = 0; i < 100; i++) {
-                const x = Math.random() * window.innerWidth;
-                const y = Math.random() * window.innerHeight;
-                const size = Math.random() * 10 + 5;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const firework = document.createElement('div');
-                firework.style.position = 'absolute';
-                firework.style.width = `${size}px`;
-                firework.style.height = `${size}px`;
-                firework.style.backgroundColor = color;
-                firework.style.borderRadius = '50%';
-                firework.style.left = `${x}px`;
-                firework.style.top = `${y}px`;
-                document.body.appendChild(firework);
-                setTimeout(() => firework.remove(), 1000);
-            }
-        }
-        setInterval(fireworks, 2000);
-
-        // Emoji Rain effect
-        function createEmojiRain() {
-            const emojis = ['🎉', '🎂', '🎈', '🎊', '🥳'];
-            const rain = document.querySelector('.emoji-rain');
-            setInterval(() => {
-                const emoji = document.createElement('span');
-                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                emoji.style.position = 'absolute';
-                emoji.style.left = Math.random() * window.innerWidth + 'px';
-                rain.appendChild(emoji);
-                setTimeout(() => emoji.remove(), 3000);
-            }, 500);
-        }
-        createEmojiRain();
-
-        // Carousel functionality
-        const images = document.querySelectorAll('.carousel img');
-        let index = 0;
-        setInterval(() => {
-            images[index].style.transform = 'scale(0)';
-            index = (index + 1) % images.length;
-            images[index].style.transform = 'scale(1)';
-        }, 3000);
+        // JavaScript for lightning effects and emoji rain would go here
     </script>
 </body>
 </html>
